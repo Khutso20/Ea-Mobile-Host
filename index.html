@@ -1,57 +1,116 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Payment page </title>
-  <link rel="stylesheet" href="./style.css">
+<title>EA MOBILE Admin - Sign Up</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
 
+.div-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input[type=text], input[type=email], input[type=password], input[type=tel] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #d4e157; /* Light green button */
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #c0ca33; /* Slightly darker green on hover */
+}
+
+.links {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+p {
+  text-align: left;
+  margin: 8px 0;
+}
+</style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- PayPal Button Script -->
-    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
-</head>
-<body>
-    <div class="payment-container">
-        <h1>Choose Your Payment Method</h1>
 
-        <!-- PayPal Payment Section -->
-        <div class="payment-method">
-            <h2>Pay with PayPal</h2>
-            <button class="paypal-btn">Pay via 
-              PayPal</button>
-        </div>
+<div class="div-container">
+  <h2>EA MOBILE Admin</h2>
+  <p style="text-align: center;">Sign Up Page</p>
+  <p style="text-align: center;">Register Your Details</p>
 
-        <!-- OZOW Payment Section -->
-        <div class="payment-method">
-            <h2>Pay with OZOW</h2>
-            <button class="ozow-btn">Pay via OZOW</button>
-        </div>
+  <form id="signupForm">
+    <input type="text" id="fullname" name="fullname" placeholder="Full name" required>
+    <input type="text" id="displayname" name="displayname" placeholder="Display name, eg. Today Forex Trader" required>
+    <input type="email" id="email" name="email" placeholder="Email" required>
+    <input type="tel" id="contactnumber" name="contactnumber" placeholder="Contact number" required>
+    <input type="password" id="password" name="password" placeholder="Password" required>
+    <button type="submit">Register</button>
+  </form>
 
-        <!-- Bank Payment Section -->
-        <div class="payment-method">
-            <h2>Pay with Bank Transfer</h2>
-            <p>Bank details:</p>
-            <p>Account Name: EA MOBILE OST</p>
-            <p>Bank Name: CAPITEC</p>
-            <p>Account Number: 2162573373</p>
-            <p>Sort Code: 12-34-56</p>
-            <button class="bank-btn">Confirm Bank Transfer</button>
-        </div>
-    </div>
+  <div class="links">
+    <a href="#">Forgot password?</a><br>
+    <a href="#">Only admins with an account! Sign In</a>
+  </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
+  <div class="links">
+    <a href="#">Terms of use.</a>
+    <a href="#">Privacy policy.</a>
+  </div>
+</div>
+
+<script>
+document.getElementById('signupForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // You can add form validation here if needed
+
+  // Redirect to the signin page
+  window.location.href = "http://localhost:7700/signin.html#";
+});
+</script>
 
 </body>
 </html>
